@@ -1,0 +1,161 @@
+.modal-edit-overlay,
+.logger-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-edit-overlay.active,
+.logger-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-card,
+.logger-modal-card {
+  width: min(520px, calc(100% - 32px));
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+  animation: rise 0.25s ease;
+}
+
+.modal-card h2,
+.logger-modal-card h2 {
+  margin: 0 0 24px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.modal-form input,
+.modal-form textarea {
+  border-radius: 12px;
+  border: 1px solid #cbd5f5;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #0ea5e9;
+  color: white;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn:hover:not(:disabled) {
+  filter: brightness(1.03);
+}
+
+.log-item {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.log-item__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.log-item__title {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.log-item__date {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.log-item__body {
+  margin: 0;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.log-item__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.logger-modal-card ul {
+  padding-left: 16px;
+  margin: 0;
+  max-height: 320px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logger-modal-card li {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
