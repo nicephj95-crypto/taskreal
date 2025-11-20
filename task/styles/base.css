@@ -1,0 +1,272 @@
+:root {
+  font-family: 'Pretendard', 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #0f172a;
+  background-color: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+#app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 36px 20px 80px;
+}
+
+.board-shell {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.board-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.board-eyebrow {
+  margin: 0 0 6px;
+  color: #0ea5e9;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.board-heading h1 {
+  font-size: 2.2rem;
+  margin: 0 0 8px;
+}
+
+.board-subtitle {
+  margin: 0;
+  color: #475569;
+}
+
+.board-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.auth-area {
+  display: grid;
+}
+
+.auth-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px 20px;
+  background: #f8fafc;
+}
+
+.auth-card h3 {
+  margin: 0 0 6px;
+}
+
+.auth-card p {
+  margin: 0 0 10px;
+  color: #475569;
+}
+
+.auth-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.auth-form input {
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-info p {
+  color: #0f172a;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.column {
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #f8fafc;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.column--locked::after {
+  content: 'Firebase 로그인 후 드래그할 수 있습니다';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  color: #94a3b8;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.column__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.column__eyebrow {
+  margin: 0 0 4px;
+  color: #0ea5e9;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.column__header h2 {
+  margin: 0;
+}
+
+.column__badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.column__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 120px;
+  padding: 8px;
+  transition: border 0.15s ease, background 0.15s ease;
+}
+
+.column__list--hover {
+  border: 1px dashed #0ea5e9;
+  background: #e0f2fe;
+}
+
+.column__empty {
+  margin: 0;
+  padding: 12px;
+  text-align: center;
+  color: #94a3b8;
+  border: 1px dashed #e2e8f0;
+  border-radius: 12px;
+}
+
+.dnd-card {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dnd-card__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dnd-card__author {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.dnd-card__desc {
+  margin: 0;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.dnd-card__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chip {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  background: #e0f2fe;
+  color: #0f172a;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #0ea5e9;
+  color: white;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn:hover:not(:disabled) {
+  filter: brightness(1.03);
+}
+
+@media (max-width: 720px) {
+  .board-heading {
+    flex-direction: column;
+  }
+
+  .board-controls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
